@@ -16,8 +16,11 @@ public class Playlist {
         return playListName;
     }
 
-   // public boolean addAlbumToPlayList(Album albumToAdd);
-
-    //int albumlength = albumToAdd.al
+   public boolean addAlbumToPlayList(Album albumToAdd){
+        int trackCount = albumToAdd.trackCount();
+        for(int i=0; i<trackCount; i++){
+            playlistTracks.add(albumToAdd.albumSongs[i]);
+        }
+   }
 
 }
