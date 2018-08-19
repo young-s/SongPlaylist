@@ -6,22 +6,22 @@ public class Album {
 
 private String title;
 private String artist;
-    ArrayList<Song> albumSongs;
+ArrayList<Song> albumSongs;
 
 
 
     public Album(String title, String artist) {
         this.title = title;
         this.artist = artist;
-        ArrayList<Song> albumSongs = new ArrayList<Song>();
+        this.albumSongs = new ArrayList<Song>();
     }
 
-    public String addSongtoAlbum(Album albumtitle, String songTitle, String runtime){
+    public boolean addSongtoAlbum(String songTitle, String runtime){
 
         Song newSongToBeAdded = new Song(songTitle, runtime);
-        albumtitle.albumSongs.add(newSongToBeAdded);
-        System.out.println((newSongToBeAdded.getTitle() + " has been added to " + albumtitle.getTitle()));
-        return "Complete";
+        this.albumSongs.add(newSongToBeAdded);
+        System.out.println((newSongToBeAdded.getTitle() + " has been added to: " + this.getTitle() + " by Artist: " + this.getArtist()));
+        return true;
     }
 
     public String getTitle() {
@@ -30,5 +30,9 @@ private String artist;
 
     public String getArtist() {
         return artist;
+    }
+
+    public int trackCount(){
+        return this.albumSongs.size();
     }
 }
