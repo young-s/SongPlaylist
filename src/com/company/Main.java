@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -28,11 +30,16 @@ public class Main {
 
         listSongs(hotMix );
 
+        Scanner scanner = new Scanner(System.in);
+        int chosenOption = scanner.nextInt();
+        boolean quit = false;
+
         printMenu();
+
     }
 
     private static void printMenu() {
-        //need to check if this is saved on macbook or not
+
         System.out.println("Please select an option\n" +
                 "0 - to Quit\n" +
                 "1 - to start playing\n" +
