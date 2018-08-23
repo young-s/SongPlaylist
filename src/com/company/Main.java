@@ -23,6 +23,30 @@ public class Main {
 
         System.out.println( hotMix.getPlayListName());
 
+        hotMix.addAlbumToPlayList(album2);
+        hotMix.addAlbumToPlayList(album1);
 
+        listSongs(hotMix );
+
+        printMenu();
+    }
+
+    private static void printMenu() {
+        //need to check if this is saved on macbook or not
+        System.out.println("Please select an option\n" +
+                "0 - to Quit\n" +
+                "1 - to start playing\n" +
+                "2 - to go to next song\n" +
+                "3 - to go to previous song\n" +
+                "4 - to remove current song from playlist\n" +
+                "5 - to see the menu options again");
+
+    }
+
+    private static void listSongs( Playlist playlist){
+        int count = playlist.playlistTracks.size();
+        for (int i =0; i<count; i++){
+            System.out.println("Track: " + playlist.playlistTracks.get(i).getTitle());
+        }
     }
 }
